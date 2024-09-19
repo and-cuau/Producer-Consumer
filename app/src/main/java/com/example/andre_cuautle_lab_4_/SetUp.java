@@ -182,7 +182,7 @@ public class SetUp extends AppCompatActivity {
     public static SetUp getInstance(){
         return setUpInstance;
     }
-
+    int test = 2;
     public void updateUI() {
         uiHandler.post(() -> {
             size = qt.size();

@@ -33,7 +33,7 @@ class Producer extends Thread{
     double b = 4;
 
     double c;
-
+    int test = 0;
     double y;
 
     public void run() {
