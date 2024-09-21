@@ -14,7 +14,7 @@ class Producer extends Thread{
     Producer(BlockingQueue q) {
         queue = q;
     }
-    public static int factorial(int n) {
+    public static int factorial(int n) { // performs factorial calculation. 
         // Base case: if n is 0 or 1, return 1
         if (n == 0 || n == 1) {
             return 1;
@@ -40,8 +40,8 @@ class Producer extends Thread{
         try {
             while (!Thread.currentThread().isInterrupted()) {
                 // y = Math.exp(x);
-                queue.put(produce());
-                SetUp.getInstance().updateUI();
+                queue.put(produce()); // Add item of arbitrary value to queue
+                SetUp.getInstance().updateUI(); // update the UI to display 
             }
         } catch (InterruptedException ex) {
 
@@ -50,15 +50,9 @@ class Producer extends Thread{
     }
     Object produce() throws InterruptedException {
 
-        int n = 30000000;
-        y = factorial(n);
+        int n = 30000000; // produced most satisfactory result after trouble-shooting
+        y = factorial(n); // calculate factorial of n to stall program execution
 
-//        int b  = 1;
-//        int max = new Random().nextInt(10);
-//        for (long i=0L; i<6000000L; i++){
-//            b = (int) ((b * max) % 123456789L);
-//        }
-//        y = b;
         return 5;
     }
 }
