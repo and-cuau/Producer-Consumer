@@ -46,15 +46,8 @@ class Consumer extends Thread {
         } catch (InterruptedException ex) { }
     }
     void consume(Object x) throws InterruptedException {
-        int n = 30000000;
-      y = factorial(n);
+        int n = 30000000; // produced most satisfactory result after trouble-shooting
+      y = factorial(n); // calculates factorial of n 
     }
 
-//        int b  = 1;
-//        int max = new Random().nextInt(10);
-//        for (long i=0L; i<6000000L; i++){
-//            b = (int) ((b * max) % 123456789L);
-//        }
-//        y = (double) b;
- //   }
 }
