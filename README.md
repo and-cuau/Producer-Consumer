@@ -21,5 +21,5 @@ Set up an Android emulator or connect a physical Android device for testing.
 Ensure the device is in developer mode and USB debugging is enabled.
 Run the App:
 
-4. Run the app
+4. Run the app:
   Click the Run button (green play icon) in Android Studio to build and run the app on the emulator or connected device.
