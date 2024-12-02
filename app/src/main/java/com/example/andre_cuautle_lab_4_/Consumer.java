@@ -41,7 +41,6 @@ class Consumer extends Thread {
             while (!Thread.currentThread().isInterrupted()) {
                 //y = Math.exp(x);
                 consume(queue.take());
-                SetUp.getInstance().updateUI();
             }
         } catch (InterruptedException ex) { }
     }

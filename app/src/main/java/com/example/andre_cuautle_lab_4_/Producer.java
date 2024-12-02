@@ -6,9 +6,6 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.CountDownLatch;
 
 
-
-
-
 class Producer extends Thread{
     private final BlockingQueue queue;
     Producer(BlockingQueue q) {
@@ -41,7 +38,6 @@ class Producer extends Thread{
             while (!Thread.currentThread().isInterrupted()) {
                 // y = Math.exp(x);
                 queue.put(produce());
-                SetUp.getInstance().updateUI();
             }
         } catch (InterruptedException ex) {
 

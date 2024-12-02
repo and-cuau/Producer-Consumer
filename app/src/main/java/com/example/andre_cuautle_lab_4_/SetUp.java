@@ -49,13 +49,9 @@ public class SetUp extends AppCompatActivity {
     Consumer cons;
     Producer prod;
 
-
-
     RadioButton[] rArray = new RadioButton[50];
 
     BlockingQueue qt = new ArrayBlockingQueue<>(50);
-
-
 
 
     @Override
@@ -88,6 +84,8 @@ public class SetUp extends AppCompatActivity {
                 prod.setPriority(ProdPrior - 1);
             }
         });
+
+        startPeriodicUIUpdates();
 
 
 
@@ -183,20 +181,34 @@ public class SetUp extends AppCompatActivity {
         return setUpInstance;
     }
     int test = 2;
-    public void updateUI() {
-        uiHandler.post(() -> {
-            size = qt.size();
-            String strNum = Integer.toString(size);
-            tv2.setText(strNum);
-            for (int j = 1; j <= size; j++) {
-                int resId = getResources().getIdentifier("r" + j, "id", getPackageName());
-                rArray[j - 1].setChecked(true);
+
+    private void startPeriodicUIUpdates() {
+        uiHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                // Get queue size and update UI
+                size = qt.size();
+                updateUI(size);
+
+                // Run Runnable every 100ms
+                uiHandler.postDelayed(this, 5);
             }
-            for (int m = size + 1; m <= 50; m++) {
-                int resId = getResources().getIdentifier("r" + m, "id", getPackageName());
-                rArray[m - 1].setChecked(false);
-            }
-        });
+        }, 5);
+    }
+
+
+    private void updateUI(int size) {
+        String strNum = Integer.toString(size);
+        tv2.setText(strNum);
+        for (int j = 1; j <= size; j++) {
+            int resId = getResources().getIdentifier("r" + j, "id", getPackageName());
+            rArray[j - 1].setChecked(true);
+        }
+        for (int m = size + 1; m <= 50; m++) {
+            int resId = getResources().getIdentifier("r" + m, "id", getPackageName());
+            rArray[m - 1].setChecked(false);
+        }
+
     }
 }
 
