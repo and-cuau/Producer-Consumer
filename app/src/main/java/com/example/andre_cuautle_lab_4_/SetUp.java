@@ -87,8 +87,6 @@ public class SetUp extends AppCompatActivity {
 
         startPeriodicUIUpdates();
 
-
-
         // Your initialization code or other setup goes here
         // For example, you might initialize UI components or set up listeners.
     }
@@ -129,10 +127,6 @@ public class SetUp extends AppCompatActivity {
         super.onResume();
         // Code to resume activities like animations or audio playback
     }
-
-
-
-
 
 
 //    public void updateUI() {

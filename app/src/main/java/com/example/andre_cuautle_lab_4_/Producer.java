@@ -5,7 +5,6 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.CountDownLatch;
 
-
 class Producer extends Thread{
     private final BlockingQueue queue;
     Producer(BlockingQueue q) {
@@ -24,7 +23,6 @@ class Producer extends Thread{
         // Recursive case: multiply n with factorial of (n-1)
         return m;
     }
-
     double x = 5;
     double a = 3; // Length of one side
     double b = 4;

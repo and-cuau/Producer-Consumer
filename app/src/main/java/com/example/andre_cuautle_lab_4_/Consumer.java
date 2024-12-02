@@ -31,8 +31,6 @@ class Consumer extends Thread {
     double a = 3; // Length of one side
     double b = 4;
 
-
-
     double c;
 
     double y;
